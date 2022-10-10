@@ -13,12 +13,11 @@ function Users() {
     <div>
       <div>
         <input onChange={(e) => setName(e.target.value)} value={name} />
-        <button
-          onClick={() => {
-            setUsers([...users, { id: crypto.randomUUID(), name }]);
-          }}
-        >
+        <button>
           추가
+        </button>
+        <button>
+          정렬
         </button>
       </div>
       {users.length > 0 && (
@@ -28,10 +27,6 @@ function Users() {
               <li key={id}>
                 {name}
                 <button
-                  onClick={() => {
-                    const deletedUsers = users.filter((user) => user.id !== id);
-                    setUsers(deletedUsers);
-                  }}
                 >
                   제거하기
                 </button>
